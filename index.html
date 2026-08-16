@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="shortcut icon" href="My logo (NO BG).png" type="image/png"/>
 <title>Diras Guragain — Portfolio</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Epilogue:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
@@ -38,19 +39,36 @@ nav{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:1.25rem 5rem;
-  background:rgba(245,243,239,0.92);
+  padding:1rem 5rem;
+  background:rgba(253, 251, 250, 0.92);
   backdrop-filter:blur(16px);
   border-bottom:1px solid var(--line);
 }
 
 .nav-logo{
-  font-family:'Playfair Display',serif;
-  font-size:1.1rem;
-  font-weight:700;
-  color:var(--ink);
-  text-decoration:none;
-  letter-spacing:0.04em;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  height:45px !important;
+  width:45px !important;
+  max-height:45px !important;
+  max-width:45px !important;
+  min-height:45px;
+  min-width:45px;
+  border-radius:50%;
+  overflow:hidden;
+  flex-shrink:0;
+  border:1px solid var(--line);
+}
+
+.nav-logo img{
+  width:100% !important;
+  height:100% !important;
+  max-width:100% !important;
+  max-height:100% !important;
+  object-fit:cover;
+  display:block;
+  transform:scale(1.9);
 }
 
 .nav-links{
@@ -600,11 +618,12 @@ footer{
 /* MOBILE: Below 768px */
 @media(max-width:767px){
   nav{
-    padding:0.9rem 1rem;
+    padding:0.75rem 1rem;
   }
   
   .nav-logo{
-    font-size:0.95rem;
+    height:36px;
+    width:36px;
   }
   
   .nav-links{
@@ -818,7 +837,8 @@ footer{
   }
   
   .nav-logo{
-    font-size:0.85rem;
+    height:32px;
+    width:32px;
   }
   
   section{
@@ -935,7 +955,7 @@ footer{
 <body>
 
 <nav>
-  <a href="#" class="nav-logo">Diras Guragain</a>
+  <a href="#" class="nav-logo"><img src="Diras Logo.png" alt="Diras Guragain logo" width="42" height="42"></a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
@@ -1145,7 +1165,7 @@ footer{
   <div class="reveal">
     <p class="s-label">&nbsp;</p>
     <h2 class="s-title"><span>Send a Message</span></h2>
-    <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+    <form action="https://api.web3forms.com/submit" method="POST" class="contact-form" id="contact-form">
       <input type="hidden" name="access_key" value="c6f8f9b4-a7e2-4795-8a94-b24d17ab5422">
       <div class="fg">
         <label for="name">Your Name</label>
