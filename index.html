@@ -508,6 +508,7 @@ section{padding:6rem 5rem;}
   transition:border-color 0.2s;
   resize:none;
   width:100%;
+  
 }
 
 .fg input:focus,
@@ -1165,7 +1166,8 @@ footer{
   <div class="reveal">
     <p class="s-label">&nbsp;</p>
     <h2 class="s-title"><span>Send a Message</span></h2>
-    <form action="https://api.web3forms.com/submit" method="POST" class="contact-form" id="contact-form">
+     
+    <form class="contact-form" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
       <input type="hidden" name="access_key" value="c6f8f9b4-a7e2-4795-8a94-b24d17ab5422">
       <div class="fg">
         <label for="name">Your Name</label>
@@ -1182,6 +1184,8 @@ footer{
       <button type="submit" class="btn btn-solid" style="align-self:flex-start;">Send Message</button>
       <p class="form-msg" id="form-msg"></p>
     </form>
+
+
   </div>
 </section>
 
@@ -1217,15 +1221,6 @@ const fillIo = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.skill-fill').forEach(el => fillIo.observe(el));
 
-document.getElementById('contact-form').addEventListener('submit', function(e){
-  e.preventDefault();
-  const name = document.getElementById('name').value.trim();
-  const msg = document.getElementById('form-msg');
-  msg.textContent = 'Message sent. Thank you, ' + name + '.';
-  msg.classList.add('show');
-  this.reset();
-  setTimeout(() => msg.classList.remove('show'), 4500);
-});
 </script>
 </body>
 </html>
